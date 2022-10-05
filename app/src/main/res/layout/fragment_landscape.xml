@@ -4,13 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LandscapeFragment">
 
-<!--    <FrameLayout-->
-<!--        android:id="@+id/frame"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        />-->
     <TextView
         android:id="@+id/test"
         android:layout_width="wrap_content"
@@ -20,25 +15,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/hint_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hello bruh"
+        app:layout_constraintBottom_toBottomOf="@+id/hint_button"
+        app:layout_constraintEnd_toEndOf="@id/choice_grid"
+        app:layout_constraintStart_toEndOf="@id/hint_button"
+        app:layout_constraintTop_toTopOf="@id/hint_button" />
+
+    <Button
+        android:id="@+id/hint_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_200"
+        android:text="@string/hint_button_text"
+        app:layout_constraintStart_toStartOf="@id/choice_grid"
+        app:layout_constraintTop_toTopOf="@+id/hang_image" />
+
     <Button
         android:id="@+id/ng_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ng_label"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/hang_image"
-        app:layout_constraintEnd_toEndOf="@+id/hang_image"
-        app:layout_constraintStart_toStartOf="@+id/hang_image" />
+        app:layout_constraintBottom_toBottomOf="@+id/hang_image"
+        app:layout_constraintStart_toEndOf="@+id/hang_image"
+        app:layout_constraintTop_toTopOf="@+id/hang_image" />
 
     <ImageView
         android:id="@+id/hang_image"
-        android:src="@drawable/start"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="mr hangman"
+        android:src="@drawable/start"
         app:layout_constraintBottom_toTopOf="@id/answer_grid"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="mr hangman" />
+        app:layout_constraintStart_toStartOf="@id/answer_grid" />
 
     <GridLayout
         android:id="@+id/answer_grid"
@@ -46,257 +59,250 @@
         android:layout_height="wrap_content"
         android:columnCount="6"
         android:useDefaultMargins="true"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@id/choice_label"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
             android:id="@+id/letter1"
+            style="@style/answer_letter"
             android:layout_row="0"
-            android:layout_column="0"
-            style="@style/answer_letter"/>
+            android:layout_column="0" />
 
         <TextView
             android:id="@+id/letter2"
+            style="@style/answer_letter"
             android:layout_row="0"
-            android:layout_column="1"
-            style="@style/answer_letter"/>
+            android:layout_column="1" />
 
         <TextView
             android:id="@+id/letter3"
+            style="@style/answer_letter"
             android:layout_row="0"
-            android:layout_column="2"
-            style="@style/answer_letter"/>
+            android:layout_column="2" />
 
         <TextView
             android:id="@+id/letter4"
+            style="@style/answer_letter"
             android:layout_row="0"
-            android:layout_column="3"
-            style="@style/answer_letter"/>
+            android:layout_column="3" />
 
         <TextView
             android:id="@+id/letter5"
+            style="@style/answer_letter"
             android:layout_row="0"
-            android:layout_column="4"
-            style="@style/answer_letter"/>
+            android:layout_column="4" />
 
         <TextView
             android:id="@+id/letter6"
+            style="@style/answer_letter"
             android:layout_row="0"
-            android:layout_column="5"
-            style="@style/answer_letter"/>
+            android:layout_column="5" />
 
     </GridLayout>
 
     <TextView
         android:id="@+id/choice_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:text="@string/choice_label"
         android:textColor="@color/black"
         android:textSize="25dp"
-        android:gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/choice_grid"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/choice_grid"
+        app:layout_constraintStart_toStartOf="@id/choice_grid" />
 
     <GridLayout
         android:id="@+id/choice_grid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:useDefaultMargins="true"
-        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/A"
-            android:text="A"
+            style="@style/choice_letter"
             android:layout_row="0"
             android:layout_column="0"
-            style="@style/choice_letter"
-            />
+            android:text="A" />
 
         <Button
             android:id="@+id/B"
-            android:text="B"
+            style="@style/choice_letter"
             android:layout_row="0"
             android:layout_column="1"
-            style="@style/choice_letter"/>
+            android:text="B" />
 
         <Button
             android:id="@+id/C"
-            android:text="C"
+            style="@style/choice_letter"
             android:layout_row="0"
             android:layout_column="2"
-            style="@style/choice_letter"/>
+            android:text="C" />
 
         <Button
             android:id="@+id/D"
-            android:text="D"
+            style="@style/choice_letter"
             android:layout_row="0"
             android:layout_column="3"
-            style="@style/choice_letter"/>
+            android:text="D" />
 
         <Button
             android:id="@+id/E"
-            android:text="E"
+            style="@style/choice_letter"
             android:layout_row="0"
             android:layout_column="4"
-            style="@style/choice_letter"/>
+            android:text="E" />
 
         <Button
             android:id="@+id/F"
-            android:text="F"
+            style="@style/choice_letter"
             android:layout_row="0"
             android:layout_column="5"
-            style="@style/choice_letter"/>
+            android:text="F" />
 
         <Button
             android:id="@+id/G"
-            android:text="G"
+            style="@style/choice_letter"
             android:layout_row="0"
             android:layout_column="6"
-            style="@style/choice_letter"/>
+            android:text="G" />
 
         <Button
             android:id="@+id/H"
-            android:text="H"
+            style="@style/choice_letter"
             android:layout_row="1"
             android:layout_column="0"
-            style="@style/choice_letter"/>
+            android:text="H" />
 
         <Button
             android:id="@+id/I"
-            android:text="I"
+            style="@style/choice_letter"
             android:layout_row="1"
             android:layout_column="1"
-            style="@style/choice_letter"/>
+            android:text="I" />
 
         <Button
             android:id="@+id/J"
-            android:text="J"
+            style="@style/choice_letter"
             android:layout_row="1"
             android:layout_column="2"
-            style="@style/choice_letter"/>
+            android:text="J" />
 
         <Button
             android:id="@+id/K"
-            android:text="K"
+            style="@style/choice_letter"
             android:layout_row="1"
             android:layout_column="3"
-            style="@style/choice_letter"/>
+            android:text="K" />
 
         <Button
             android:id="@+id/L"
-            android:text="L"
+            style="@style/choice_letter"
             android:layout_row="1"
             android:layout_column="4"
-            style="@style/choice_letter"/>
+            android:text="L" />
 
         <Button
             android:id="@+id/M"
-            android:text="M"
+            style="@style/choice_letter"
             android:layout_row="1"
             android:layout_column="5"
-            style="@style/choice_letter"/>
+            android:text="M" />
 
         <Button
             android:id="@+id/N"
-            android:text="N"
+            style="@style/choice_letter"
             android:layout_row="1"
             android:layout_column="6"
-            style="@style/choice_letter"/>
+            android:text="N" />
 
         <Button
             android:id="@+id/O"
-            android:text="O"
+            style="@style/choice_letter"
             android:layout_row="2"
             android:layout_column="0"
-            style="@style/choice_letter"/>
+            android:text="O" />
 
         <Button
             android:id="@+id/P"
-            android:text="P"
+            style="@style/choice_letter"
             android:layout_row="2"
             android:layout_column="1"
-            style="@style/choice_letter"/>
+            android:text="P" />
 
         <Button
             android:id="@+id/Q"
-            android:text="Q"
+            style="@style/choice_letter"
             android:layout_row="2"
             android:layout_column="2"
-            style="@style/choice_letter"/>
+            android:text="Q" />
 
         <Button
             android:id="@+id/R"
-            android:text="R"
+            style="@style/choice_letter"
             android:layout_row="2"
             android:layout_column="3"
-            style="@style/choice_letter"/>
+            android:text="R" />
 
         <Button
             android:id="@+id/S"
-            android:text="S"
+            style="@style/choice_letter"
             android:layout_row="2"
             android:layout_column="4"
-            style="@style/choice_letter"/>
+            android:text="S" />
 
         <Button
             android:id="@+id/T"
-            android:text="T"
+            style="@style/choice_letter"
             android:layout_row="2"
             android:layout_column="5"
-            style="@style/choice_letter"/>
+            android:text="T" />
 
         <Button
             android:id="@+id/U"
-            android:text="U"
+            style="@style/choice_letter"
             android:layout_row="2"
             android:layout_column="6"
-            style="@style/choice_letter"/>
+            android:text="U" />
 
         <Button
             android:id="@+id/V"
-            android:text="V"
+            style="@style/choice_letter"
             android:layout_row="3"
             android:layout_column="0"
-            style="@style/choice_letter"/>
+            android:text="V" />
 
         <Button
             android:id="@+id/W"
-            android:text="W"
+            style="@style/choice_letter"
             android:layout_row="3"
             android:layout_column="1"
-            style="@style/choice_letter"/>
+            android:text="W" />
 
         <Button
             android:id="@+id/X"
-            android:text="X"
+            style="@style/choice_letter"
             android:layout_row="3"
             android:layout_column="3"
-            style="@style/choice_letter"/>
+            android:text="X" />
 
         <Button
             android:id="@+id/Y"
-            android:text="Y"
+            style="@style/choice_letter"
             android:layout_row="3"
             android:layout_column="5"
-            style="@style/choice_letter"/>
+            android:text="Y" />
 
         <Button
             android:id="@+id/Z"
-            android:text="Z"
+            style="@style/choice_letter"
             android:layout_row="3"
             android:layout_column="6"
-            style="@style/choice_letter"/>
+            android:text="Z" />
 
     </GridLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

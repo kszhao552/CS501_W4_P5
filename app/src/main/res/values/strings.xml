@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">W4_P5</string>
+
+    <string name="hint_button_text">PAY FOR HINT</string>
+    <string name="choice_label">CHOOSE A LETTER</string>
+    <string name="ng_label">START NEW GAME</string>
+
+    <string name="word0">donut</string>
+    <string name="word1">apple</string>
+    <string name="word2">car</string>
+    <string name="word3">cheese</string>
+    <string name="word4">mobile</string>
+    <string name="word5">rock</string>
+    <string name="word6">tiger</string>
+    <string name="word7">laptop</string>
+    <string name="word8">france</string>
+    <string name="word9">burger</string>
+
+    <string name="hint0">round pastry</string>
+    <string name="hint1">orchards</string>
+    <string name="hint2">4 wheels</string>
+    <string name="hint3">mouse trap</string>
+    <string name="hint4">phone</string>
+    <string name="hint5">hard</string>
+    <string name="hint6">big cat</string>
+    <string name="hint7">computer</string>
+    <string name="hint8">paris</string>
+    <string name="hint9">krabby patty</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

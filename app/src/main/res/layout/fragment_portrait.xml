@@ -4,13 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".PortraitFragment">
 
-<!--    <FrameLayout-->
-<!--        android:id="@+id/frame"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        />-->
     <TextView
         android:id="@+id/test"
         android:layout_width="wrap_content"
@@ -117,7 +112,7 @@
             android:layout_row="0"
             android:layout_column="0"
             style="@style/choice_letter"
-            />
+             />
 
         <Button
             android:id="@+id/B"
@@ -295,8 +290,5 @@
             style="@style/choice_letter"/>
 
     </GridLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
